@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/mrurespect/movie-app/static/css/main.53d01d4e.css",
-    "main.js": "/mrurespect/movie-app/static/js/main.d972296a.js",
+    "main.js": "/mrurespect/movie-app/static/js/main.bb2172d5.js",
     "static/js/787.eb8519e5.chunk.js": "/mrurespect/movie-app/static/js/787.eb8519e5.chunk.js",
     "static/media/fa-solid-900.ttf": "/mrurespect/movie-app/static/media/fa-solid-900.d75e3fd1eb12e9bd6655.ttf",
     "static/media/fa-brands-400.ttf": "/mrurespect/movie-app/static/media/fa-brands-400.016b4a6cdced82ab3aa1.ttf",
@@ -13,11 +13,11 @@
     "static/media/fa-v4compatibility.woff2": "/mrurespect/movie-app/static/media/fa-v4compatibility.1bac2991f3dbfa237aec.woff2",
     "index.html": "/mrurespect/movie-app/index.html",
     "main.53d01d4e.css.map": "/mrurespect/movie-app/static/css/main.53d01d4e.css.map",
-    "main.d972296a.js.map": "/mrurespect/movie-app/static/js/main.d972296a.js.map",
+    "main.bb2172d5.js.map": "/mrurespect/movie-app/static/js/main.bb2172d5.js.map",
     "787.eb8519e5.chunk.js.map": "/mrurespect/movie-app/static/js/787.eb8519e5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.53d01d4e.css",
-    "static/js/main.d972296a.js"
+    "static/js/main.bb2172d5.js"
   ]
 }
