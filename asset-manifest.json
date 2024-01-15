@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/mrurespect/movie-app-production/static/css/main.efa92d85.css",
-    "main.js": "/mrurespect/movie-app-production/static/js/main.fa9f9fdd.js",
-    "static/js/787.eb8519e5.chunk.js": "/mrurespect/movie-app-production/static/js/787.eb8519e5.chunk.js",
-    "static/media/fa-solid-900.ttf": "/mrurespect/movie-app-production/static/media/fa-solid-900.d75e3fd1eb12e9bd6655.ttf",
-    "static/media/fa-brands-400.ttf": "/mrurespect/movie-app-production/static/media/fa-brands-400.016b4a6cdced82ab3aa1.ttf",
-    "static/media/fa-solid-900.woff2": "/mrurespect/movie-app-production/static/media/fa-solid-900.b6879d41b0852f01ed5b.woff2",
-    "static/media/fa-brands-400.woff2": "/mrurespect/movie-app-production/static/media/fa-brands-400.878f31251d960bd6266f.woff2",
-    "static/media/fa-regular-400.ttf": "/mrurespect/movie-app-production/static/media/fa-regular-400.50701fbb8177c2dde530.ttf",
-    "static/media/fa-regular-400.woff2": "/mrurespect/movie-app-production/static/media/fa-regular-400.b041b1fa4fe241b23445.woff2",
-    "static/media/fa-v4compatibility.ttf": "/mrurespect/movie-app-production/static/media/fa-v4compatibility.c6a0c95b0a95c4553700.ttf",
-    "static/media/fa-v4compatibility.woff2": "/mrurespect/movie-app-production/static/media/fa-v4compatibility.1bac2991f3dbfa237aec.woff2",
-    "index.html": "/mrurespect/movie-app-production/index.html",
-    "main.efa92d85.css.map": "/mrurespect/movie-app-production/static/css/main.efa92d85.css.map",
-    "main.fa9f9fdd.js.map": "/mrurespect/movie-app-production/static/js/main.fa9f9fdd.js.map",
-    "787.eb8519e5.chunk.js.map": "/mrurespect/movie-app-production/static/js/787.eb8519e5.chunk.js.map"
+    "main.css": "/mrurespect/movie-app/static/css/main.53d01d4e.css",
+    "main.js": "/mrurespect/movie-app/static/js/main.d972296a.js",
+    "static/js/787.eb8519e5.chunk.js": "/mrurespect/movie-app/static/js/787.eb8519e5.chunk.js",
+    "static/media/fa-solid-900.ttf": "/mrurespect/movie-app/static/media/fa-solid-900.d75e3fd1eb12e9bd6655.ttf",
+    "static/media/fa-brands-400.ttf": "/mrurespect/movie-app/static/media/fa-brands-400.016b4a6cdced82ab3aa1.ttf",
+    "static/media/fa-solid-900.woff2": "/mrurespect/movie-app/static/media/fa-solid-900.b6879d41b0852f01ed5b.woff2",
+    "static/media/fa-brands-400.woff2": "/mrurespect/movie-app/static/media/fa-brands-400.878f31251d960bd6266f.woff2",
+    "static/media/fa-regular-400.ttf": "/mrurespect/movie-app/static/media/fa-regular-400.50701fbb8177c2dde530.ttf",
+    "static/media/fa-regular-400.woff2": "/mrurespect/movie-app/static/media/fa-regular-400.b041b1fa4fe241b23445.woff2",
+    "static/media/fa-v4compatibility.ttf": "/mrurespect/movie-app/static/media/fa-v4compatibility.c6a0c95b0a95c4553700.ttf",
+    "static/media/fa-v4compatibility.woff2": "/mrurespect/movie-app/static/media/fa-v4compatibility.1bac2991f3dbfa237aec.woff2",
+    "index.html": "/mrurespect/movie-app/index.html",
+    "main.53d01d4e.css.map": "/mrurespect/movie-app/static/css/main.53d01d4e.css.map",
+    "main.d972296a.js.map": "/mrurespect/movie-app/static/js/main.d972296a.js.map",
+    "787.eb8519e5.chunk.js.map": "/mrurespect/movie-app/static/js/787.eb8519e5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.efa92d85.css",
-    "static/js/main.fa9f9fdd.js"
+    "static/css/main.53d01d4e.css",
+    "static/js/main.d972296a.js"
   ]
 }
