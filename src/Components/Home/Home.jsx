@@ -8,8 +8,8 @@ function Home() {
     const max_items = 10 ;
     return (<>
         <Helmet>
-        <meta charSet="utf-8" />
-        <title>Home</title>
+            <meta charSet="utf-8" />
+            <title>Home</title>
         </Helmet>
         <Movies to={max_items}/>
         <Tv to={max_items}/>

@@ -8,7 +8,7 @@ function Login() {
     const [user,setUser]=useState({
         email:'',
         password:''
-    })
+    });
     const [error,setError]=useState("");
     const [isLoading,setIsLoading]=useState(false);
     let navigate =useNavigate();
@@ -67,9 +67,9 @@ function Login() {
         {error.length>0?<div className="alert alert-danger my-2">{error}</div>:''}
         <form onSubmit={submitLoginForm}>
             <label htmlFor="age">email : </label>
-            <input onChange={getUserData} placeholder="enter : email@gmail.com" className="form-control my-input my-2" type="email" id="email" name="email"/>
+            <input onChange={getUserData} className="form-control my-input my-2" type="email" id="email" name="email"/>
             <label htmlFor="password">password : </label>
-            <input onChange={getUserData} placeholder="enter : Hello" className="form-control my-input my-2" type="password" id="password" name="password"/>
+            <input onChange={getUserData} className="form-control my-input my-2" type="password" id="password" name="password"/>
             <button type="submit" className="btn btn-info" >
                 {isLoading ===true ? <i className="fas fa-spinner fa-spin"></i>:'Login'}
             </button>

@@ -1,15 +1,9 @@
-import React, {useEffect} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import Mediaitem from "../Mediaitem/Mediaitem";
-import {useDispatch, useSelector} from "react-redux";
-import {getMedia} from "../../Redux/Slice/MoviesSlice";
+import {MediaContext} from "../../Context/MediaContext";
 
 function Movies({to}) {
-    let dispatch =useDispatch();
-    //let {trendingMovies}=useContext(MediaContext)
-    useEffect(()=>{
-       dispatch( getMedia("movie"))
-    },[])
-        let trendingMovies=useSelector((state)=>state.movie.trendingMedia)
+    let {trendingMovies}=useContext(MediaContext)
 
     return (
         trendingMovies?<>

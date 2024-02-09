@@ -1,16 +1,9 @@
-import React, {useEffect} from 'react';
+import React, {useContext} from 'react';
 import Mediaitem from "../Mediaitem/Mediaitem";
-import {useDispatch, useSelector} from "react-redux";
-import {getMedia} from "../../Redux/Slice/TvSlice";
+import {MediaContext} from "../../Context/MediaContext";
 
 function Tv({to}) {
-    //let {trendingTv} =useContext(MediaContext);
-    let dispatch=useDispatch();
-    useEffect(()=>{
-        dispatch( getMedia("tv"))
-    },[])
-    let trendingTv=useSelector((state)=>state.tv.trendingMedia)
-
+    let {trendingTv} =useContext(MediaContext);
     return (
         trendingTv?<>
             <div className="row  py-5 text-center">

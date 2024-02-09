@@ -10,6 +10,7 @@ export default function AuthenContextProvider(props) {
         //decodedToken =jwtDecode(encodedToken);
         //setUserData(decodedToken);
         await setUserData({first_name:"mrurespect",last_name:"mrurespect",age:21,email:"user22@gmail.com"}) //testing
+        //console.log(decodedToken); //now we have the info of the user ; name , age ,...
         console.log("userData= "+userData);
     }
 

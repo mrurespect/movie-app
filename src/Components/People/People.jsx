@@ -1,15 +1,9 @@
-import React, {useEffect} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import Mediaitem from "../Mediaitem/Mediaitem";
-import {useDispatch, useSelector} from "react-redux";
-import {getMedia} from "../../Redux/Slice/PeopleSlice";
+import {MediaContext} from "../../Context/MediaContext";
 
 function People({to}) {
-    //let {trendingPeople} =useContext(MediaContext);
-    let trendingPeople=useSelector((state)=>state.people.trendingMedia)
-    let dispatch =useDispatch();
-    useEffect(()=>{
-        dispatch(getMedia("person"))
-    },[])
+    let {trendingPeople} =useContext(MediaContext);
     return (
         trendingPeople?<>
             <div className="row  py-5 text-center">
