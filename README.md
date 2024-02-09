@@ -1,46 +1,64 @@
-# Getting Started with Create React App
+#  Movie Explorer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Deployment and Development Versions
 
-## Available Scripts
+Movie Explorer exists in two versions:
 
-In the project directory, you can run:
+- The production version is hosted on the `gh-pages` branch.
+- The development version resides on the `master` branch.
 
-### `npm start`
+## Authentication with Backend
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+To streamline the development process, the authentication code with the backend is temporarily commented out. This enables seamless testing and previewing of the application locally. When testing the authentication functionality, you can use the following credentials:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- **Email:** email@gmail.com
+- **Password:** Hello
 
-### `npm test`
+## Key Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. **Trending Content Exploration:** Discover the latest and most popular movies, TV series, and notable individuals in the entertainment industry.
+   
+2. **Detailed Information:** Access comprehensive details about movies, TV series, and industry professionals, including summaries, ratings, and release dates.
 
-### `npm run build`
+3. **User Authentication:** While the backend authentication code is commented for development purposes, users can test the authentication feature locally using the provided credentials.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. **Responsive Design:** Ensure a consistent and user-friendly experience across different devices, including desktops, tablets, and mobile phones.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Technology Stack
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Frontend:** Developed with React for a dynamic and interactive user interface.
+  
+- **State Management:** Utilizes Redux Toolkit for effective state management.
 
-### `npm run eject`
+- **Routing:** Implements React Router for client-side navigation.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- **Styling:** Styled with CSS, SCSS to achieve a clean and visually appealing design, with additional support from Bootstrap.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **API Integration:** Fetches real-time data from external APIs using Axios to provide up-to-date information on trending content.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- **Authentication:** Utilizes JWT-decode library for handling authentication processes.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- **Development and Build Tools:** Uses TypeScript for enhanced type-checking, and integrates with tools such as React Helmet for head management.
 
-## Learn More
+- **Deployment:** The production version is deployed on GitHub Pages for public access, offering a stable and shareable release.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Scripts and Commands
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- `npm start:` Initiates the development server for local testing.
+
+- `npm run build:` Generates the production build for deployment.
+
+- `npm run deploy:` Deploys the production build to GitHub Pages.
+
+- `serve:` Initiates the development server for the production version.
+
+## Testing Authentication
+
+During development, uncomment the authentication code to test the functionality. For quick access, use the provided credentials: email@gmail.com as the email and Hello as the password.
+
+## You need to add your MovieDb  api key  
+to get registred : https://developer.themoviedb.org/docs/getting-started
+![image](https://github.com/mrurespect/movie-app/assets/121578147/623eb08e-4232-4d45-bf60-720080ce9c13)
+
+path to the file : src/Context/MediaContext.jsx
+
