@@ -1,6 +1,6 @@
 import React, {useContext, useEffect, useState} from 'react';
 import './App.css';
-import {createBrowserRouter, createHashRouter, HashRouter, RouterProvider} from "react-router-dom";
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import Layout from "./Components/Layout/Layout";
 import Home from "./Components/Home/Home";
 import Movies from "./Components/Movies/Movies";
@@ -16,8 +16,6 @@ import {Offline} from 'react-detect-offline'
 import NotFound from "./Components/NotFound/NotFound";
 import MediaContexProvider from "./Context/MediaContext";
 import {AuthenContext} from "./Context/AuthenContext";
-import store from "./Redux/Store";
-import {Provider} from "react-redux";
 function App() {
     let {userData,saveUserData} =useContext(AuthenContext);
     useEffect(()=>{
@@ -27,8 +25,8 @@ function App() {
     },[])
     useEffect(()=>{console.log("userData updated "+userData)},[userData])
 
-    let routers =createHashRouter([
-        {path:"/" ,element:<Layout />,  children:[
+    let routers =createBrowserRouter([
+        {path:"/" ,element:<Layout /> , children:[
                 {index:true ,  element:<ProtectedRoute><Home/></ProtectedRoute>},
                 {path:"about", element:<ProtectedRoute><About/></ProtectedRoute>},
                 {path:"movies" ,  element:<ProtectedRoute><Movies/></ProtectedRoute>},
@@ -46,15 +44,12 @@ function App() {
       <div>
           <Offline ><div className="offline">You're offline Check your connection</div></Offline>
       </div>
-      <Provider store={store}>
+
           <MediaContexProvider>
-              <RouterProvider  router={routers} >
-                  <HashRouter basename="/movie-app">
-                      {routers}
-                  </HashRouter>
-              </RouterProvider>
+              <RouterProvider  router={routers}/>
           </MediaContexProvider>
-      </Provider>
+
+
   </>);
 }
 
