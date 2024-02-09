@@ -1,6 +1,6 @@
 import React, {useContext, useEffect, useState} from 'react';
 import './App.css';
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import {createBrowserRouter, createHashRouter, HashRouter, RouterProvider} from "react-router-dom";
 import Layout from "./Components/Layout/Layout";
 import Home from "./Components/Home/Home";
 import Movies from "./Components/Movies/Movies";
@@ -27,8 +27,8 @@ function App() {
     },[])
     useEffect(()=>{console.log("userData updated "+userData)},[userData])
 
-    let routers =createBrowserRouter([
-        {path:"/" ,element:<Layout /> , children:[
+    let routers =createHashRouter([
+        {path:"/" ,element:<Layout />,  children:[
                 {index:true ,  element:<ProtectedRoute><Home/></ProtectedRoute>},
                 {path:"about", element:<ProtectedRoute><About/></ProtectedRoute>},
                 {path:"movies" ,  element:<ProtectedRoute><Movies/></ProtectedRoute>},
@@ -48,7 +48,11 @@ function App() {
       </div>
       <Provider store={store}>
           <MediaContexProvider>
-              <RouterProvider  router={routers}/>
+              <RouterProvider  router={routers} >
+                  <HashRouter basename="/movie-app">
+                      {routers}
+                  </HashRouter>
+              </RouterProvider>
           </MediaContexProvider>
       </Provider>
   </>);
