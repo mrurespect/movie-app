@@ -8,7 +8,7 @@ export default function MediaContexProvider(props){
     const [trendingTv,setTrendingTv]=useState(null);
 
     async function getTrending(mediaType,callback){
-        const apikey ="ec42fc0dbd23576b091c75c5dc1c94b4";
+        const apikey =""; // add your api key here
         let url = `https://api.themoviedb.org/3/trending/${mediaType}/week?api_key=`+apikey;
         let {data}=await axios.get(url) ;
         callback(data.results);
