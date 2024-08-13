@@ -1,57 +1,157 @@
-import React, {useEffect, useState} from 'react';
-import {useParams} from "react-router-dom";
-import axios from "axios";
-import {Helmet} from "react-helmet";
-import Movies from "../Movies/Movies";
-import Tv from "../Tv/Tv";
-import People from "../People/People";
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
+import { Helmet } from 'react-helmet';
 
-function ItemDetails(props) {
-    let {id,media_type} =useParams();
-    let [item,setItemData]=useState(null);
-   // console.log(allParams.id) ; //{id:"872585",media_type:"movie"
-     let url = `https://api.themoviedb.org/3/${media_type}/${id}?api_key=ec42fc0dbd23576b091c75c5dc1c94b4`;
-     async function getItemsData(){
-         let {data} =await axios.get(url);
-         console.log(data) ;
-         setItemData(data) ;
-     }
-     useEffect(()=>{
-         getItemsData();
-     },[])
+function ItemDetails() {
+    const { id, media_type } = useParams();
+    const [item, setItemData] = useState(null);
 
-    return (<>
-        <Helmet>
-            <meta charSet="utf-8" />
-            <title>{item&&(item.title||item.name)}</title>
-            <meta name="description" content={item&&item.description}/>
-        </Helmet>
-        {item?<div className="row mt-3">
-            <div className="col-md-3">
-                {
-                    item.poster_path?<img src={"https://image.tmdb.org/t/p/w500"+item.poster_path}  className="w-100" alt=""/>
-                        :           <img src={"https://image.tmdb.org/t/p/w500"+item.profile_path}  className="w-100" alt=""/>
-                }
-            </div>
-            <div className="col-md-9">
-                <h3 className=" my-2">{item.title}{item.name}</h3>
-                <i className="h5">{item.tagline}</i>
-                <p className="py-2 ">{item.overview}{item.biography}</p>
-                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                {item.homepage&&<h6> home page : <a target="_blank" href={item.homepage} className="text-primary">{item.homepage}</a></h6>}
-                { (item.release_date || item.first_air_date) &&<h6>release date : {item.release_date}{item.first_air_date}</h6>}
-                {item.birthday&&<h6>birthday : {item.birthday}</h6>}
-                <h6>popularity : {item.popularity}</h6>
+    const url = `https://api.themoviedb.org/3/${media_type}/${id}?api_key=ec42fc0dbd23576b091c75c5dc1c94b4`;
 
-                {item.vote_average&&<h6>vote average :  {item.vote_average?.toFixed(1)}</h6>}
-                {item.vote_count&&<h6>vote count :  {item.vote_count} </h6>}
-            </div>
-        </div>:<div className="w-100 vh-100 d-flex justify-content-center align-items-center">
-            <i className="fas fa-spinner fa-spin fa-3x"></i>
-        </div>
-        }
+    async function getItemsData() {
+        const { data } = await axios.get(url);
+        setItemData(data);
+    }
 
-</> );
+    useEffect(() => {
+        getItemsData();
+    }, [url]);
+
+    return (
+        <>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>{item && (item.title || item.name)}</title>
+                <meta name="description" content={item && (item.overview || item.biography)} />
+            </Helmet>
+            {item ? (
+                <div style={styles.container}>
+                    <div style={styles.imageContainer}>
+                        <img
+                            src={
+                                item.poster_path
+                                    ? `https://image.tmdb.org/t/p/w500${item.poster_path}`
+                                    : `https://image.tmdb.org/t/p/w500${item.profile_path}`
+                            }
+                            alt={item.title || item.name}
+                            style={styles.image}
+                        />
+                    </div>
+                    <div style={styles.details}>
+                        <h1 style={styles.title}>{item.title || item.name}</h1>
+                        <h2 style={styles.tagline}>{item.tagline}</h2>
+                        <p style={styles.overview}>{item.overview || item.biography}</p>
+                        {item.homepage && (
+                            <p style={styles.homepage}>
+                                <strong>Homepage:</strong>{' '}
+                                <a href={item.homepage} target="_blank" rel="noopener noreferrer" style={styles.link}>
+                                    {item.homepage}
+                                </a>
+                            </p>
+                        )}
+                        {(item.release_date || item.first_air_date) && (
+                            <p style={styles.date}>
+                                <strong>Release Date:</strong> {item.release_date || item.first_air_date}
+                            </p>
+                        )}
+                        {item.birthday && (
+                            <p style={styles.date}>
+                                <strong>Birthday:</strong> {item.birthday}
+                            </p>
+                        )}
+                        <p style={styles.popularity}>
+                            <strong>Popularity:</strong> {item.popularity}
+                        </p>
+                        {item.vote_average && (
+                            <p style={styles.vote}>
+                                <strong>Vote Average:</strong> {item.vote_average?.toFixed(1)}
+                            </p>
+                        )}
+                        {item.vote_count && (
+                            <p style={styles.vote}>
+                                <strong>Vote Count:</strong> {item.vote_count}
+                            </p>
+                        )}
+                    </div>
+                </div>
+            ) : (
+                <div style={styles.loading}>
+                    <i className="fas fa-spinner fa-spin fa-3x"></i>
+                </div>
+            )}
+        </>
+    );
 }
+
+const styles = {
+    container: {
+        display: 'flex',
+        flexDirection: 'row',
+        padding: '20px',
+        backgroundColor: '#f8f9fa',
+        borderRadius: '8px',
+        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+        margin: '20px auto',
+        maxWidth: '1200px',
+    },
+    imageContainer: {
+        flex: '1',
+        maxWidth: '300px',
+        marginRight: '20px',
+    },
+    image: {
+        width: '100%',
+        borderRadius: '8px',
+        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+    },
+    details: {
+        flex: '2',
+    },
+    title: {
+        fontSize: '2.5rem',
+        margin: '0',
+        color: '#333',
+    },
+    tagline: {
+        fontSize: '1.2rem',
+        fontStyle: 'italic',
+        color: '#666',
+        margin: '10px 0',
+    },
+    overview: {
+        fontSize: '1rem',
+        color: '#555',
+        lineHeight: '1.6',
+        marginBottom: '20px',
+    },
+    homepage: {
+        fontSize: '1rem',
+        color: '#007bff',
+    },
+    link: {
+        color: '#007bff',
+        textDecoration: 'none',
+    },
+    date: {
+        fontSize: '1rem',
+        color: '#555',
+    },
+    popularity: {
+        fontSize: '1rem',
+        color: '#555',
+    },
+    vote: {
+        fontSize: '1rem',
+        color: '#555',
+    },
+    loading: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100vh',
+        backgroundColor: '#f8f9fa',
+    },
+};
 
 export default ItemDetails;

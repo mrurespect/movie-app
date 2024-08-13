@@ -12,7 +12,7 @@ function Movies({to}) {
                 <div>
                     <div className="brdr w-25 mb-3"></div>
                     <h2 className="h5">Trending Movies <br/> To watch Right Now</h2>
-                    <p className="py-2 text-muted">most watched movies To watch Right Now</p>
+                    <p className="py-2 text-secondary">most watched movies To watch Right Now</p>
                     <div className="brdr w-100 mt-3"></div>
                 </div>
             </div>

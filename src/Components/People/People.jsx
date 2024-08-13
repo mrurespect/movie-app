@@ -10,8 +10,8 @@ function People({to}) {
                 <div className="col-md-4 d-flex align-items-center">
                     <div>
                         <div className="brdr w-25 mb-3"></div>
-                        <h2 className="h5">Trending People <br/> To watch Right Now</h2>
-                        <p className="py-2 text-muted">most watched people To watch Right Now</p>
+                        <h2 className="h5">Trending People </h2>
+                        <p className="py-2 text-secondary">most watched people Right Now</p>
                         <div className="brdr w-100 mt-3"></div>
                     </div>
                 </div>

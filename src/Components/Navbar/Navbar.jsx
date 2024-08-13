@@ -10,10 +10,11 @@ function Navbar({logout}) {
                 <h1 className="m-0 pe-3">Noxe</h1>
 {userData?<ul className="list-unstyled d-flex  m-0 align-items-center">
                     <li className="px-2"><Link to="/">Home</Link></li>
-                    <li  className="px-2"><Link to="about">About</Link></li>
                     <li className="px-2"><Link to="movies">Movies</Link></li>
                     <li className="px-2"><Link to="tv">Tv</Link></li>
                     <li className="px-2"><Link to="people">People</Link></li>
+                    <li  className="px-2"><Link to="about">About</Link></li>
+
                 </ul>:''}
 
             </div>
